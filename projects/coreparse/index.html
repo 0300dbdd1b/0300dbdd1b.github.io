@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>coreparse - LesLie</title>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+    <main>
+        <header>
+            <h1>⚔ coreparse</h1>
+            <p class="nym">Bitcoin Core datadir parser</p>
+        </header>
+
+        <section>
+            <p>
+                coreparse is a C API for reading and parsing a Bitcoin Core datadir.
+            </p>
+
+            <p>
+                It reads blockchain data directly from disk and exposes it through
+                my own API, so I can inspect the chain without depending only on
+                Bitcoin Core RPC calls.
+            </p>
+        </section>
+
+        <section>
+            <p class="quote">&gt; reading the chain from disk, not from a black box.</p>
+        </section>
+
+        <section>
+            <p class="label">story :</p>
+            <p>
+                I started coreparse because I was frustrated with using the Bitcoin
+                RPC interface for everything. It is useful, but it can also be slow
+                or limiting when I want to explore chain data in my own way.
+            </p>
+
+            <p>
+                I also wanted to understand how Bitcoin Core stores things on disk:
+                block files, indexes, chainstate data, and the relationship between
+                the raw blk.dat files and LevelDB.
+            </p>
+
+            <p>
+                So I wrote my own blk.dat parser, added LevelDB interaction, and
+                started building an API around it. The point was not only to gather
+                data from the chain, but to learn by rebuilding the path myself.
+            </p>
+        </section>
+
+        <section>
+            <p class="label">what it does :</p>
+            <p>
+                It parses Bitcoin Core block files, reads blocks and transactions,
+                interacts with LevelDB data, and gives me a C interface to query
+                and experiment with blockchain data.
+            </p>
+        </section>
+
+        <section>
+            <p class="label">status :</p>
+            <p>
+                experimental and evolving.
+            </p>
+        </section>
+
+        <section>
+            <p class="label">links :</p>
+            <ul class="links">
+                <li><a href="https://github.com/0300dbdd1b/coreparse">source &gt;</a></li>
+                <li><a href="../">&lt; projects</a></li>
+                <li><a href="../../">&lt; home</a></li>
+            </ul>
+        </section>
+
+        <footer>
+            <p class="footer-text">ΜΟΛΩΝ ΛΑΒΕ</p>
+            <div class="footer-icon">★</div>
+            <p class="end-prompt">0300dbdd1b@void:~/projects/coreparse$ <span class="cursor">█</span></p>
+        </footer>
+    </main>
+</body>
+</html>

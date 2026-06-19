@@ -1,0 +1,154 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background: #090501;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    color: #ffe8c2;
+    background:
+        radial-gradient(circle at 50% 16%, rgba(247, 147, 26, 0.24), transparent 38%),
+        radial-gradient(circle at 82% 72%, rgba(247, 147, 26, 0.10), transparent 30%),
+        #090501;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 16px;
+    line-height: 1.62;
+}
+
+main {
+    width: min(680px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 64px 0;
+}
+
+header {
+    margin-bottom: 34px;
+}
+
+h1 {
+    margin: 0;
+    color: #f7931a;
+    font-size: 2rem;
+    font-weight: normal;
+    letter-spacing: -0.04em;
+    text-shadow: 0 0 18px rgba(247, 147, 26, 0.75);
+}
+
+.nym {
+    margin-top: 2px;
+    color: #ffbd69;
+}
+
+section {
+    margin: 34px 0;
+}
+
+article section {
+    margin: 36px 0;
+}
+
+p {
+    margin: 0 0 16px;
+}
+
+.label {
+    margin-bottom: 8px;
+    color: #f7931a;
+}
+
+.quote {
+    color: #ffbd69;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+li {
+    margin: 3px 0;
+}
+
+a {
+    color: #fff0d6;
+    text-decoration: none;
+    border-bottom: 1px dotted #f7931a;
+}
+
+a:hover {
+    color: #090501;
+    background: #f7931a;
+    border-bottom-color: #f7931a;
+}
+
+.links {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.links li {
+    margin: 3px 0;
+}
+
+footer {
+    margin-top: 72px;
+    text-align: center;
+}
+
+.footer-text {
+    color: #ffbd69;
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 12px;
+}
+
+.footer-icon {
+    color: #f7931a;
+    font-size: clamp(4rem, 18vw, 8rem);
+    line-height: 1;
+    text-shadow: 0 0 28px rgba(247, 147, 26, 0.8);
+    margin-bottom: 28px;
+}
+
+.end-prompt {
+    color: #ffbd69;
+    font-size: 0.95rem;
+    margin: 0;
+    text-align: left;
+}
+
+.cursor {
+    color: #f7931a;
+    animation: blink 1s steps(1) infinite;
+}
+
+::selection {
+    color: #090501;
+    background: #f7931a;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    main {
+        padding: 40px 0;
+    }
+
+    body {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+}
