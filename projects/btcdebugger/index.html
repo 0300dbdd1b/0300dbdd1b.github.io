@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A beautiful WebAssembly frontend for the btcdeb Bitcoin Script Debugger." />
+    <title>BTC Debugger - WebAssembly</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script type="module" crossorigin src="./assets/index-CvGGj6Zx.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BW5571tA.css">
+  </head>
+  <body>
+    <div id="app">
+      <header class="app-header">
+        <a href="/" class="brand-link">btc<span>debugger</span></a>
+      </header>
+      <div class="glass-container">
+        <main class="layout">
+          <div class="controls-panel">
+            <div class="toolbar">
+              <div class="toolbar-title">Bitcoin Script</div>
+              <div class="toolbar-actions">
+                <select id="target-select" class="dropdown small" title="Execution Target">
+                  <option value="legacy" selected>Legacy</option>
+                  <option value="taproot">Taproot</option>
+                  <option value="segwit">SegWit</option>
+                </select>
+                <label class="discrete-checkbox" title="Allow Disabled Opcodes (e.g. OP_MUL)">
+                  <input type="checkbox" id="allow-opcodes" />
+                  <span class="discrete-box"></span>
+                  <span class="checkbox-label">Allow Disabled Ops</span>
+                </label>
+                <button id="share-btn" class="secondary-btn small-btn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 4px;"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  Share
+                </button>
+              </div>
+            </div>
+            
+            <div class="input-group" style="margin-bottom: 0;">
+              <div id="script-input" class="monaco-container"></div>
+            </div>
+
+            <div class="input-group" style="margin-top: 1rem;">
+              <label for="stack-input">Initial Stack <span class="label-hint">(bottom → top, space-separated)</span></label>
+              <input type="text" id="stack-input" class="stack-input" placeholder="e.g. deadbeef 0102" spellcheck="false" />
+            </div>
+          </div>
+
+          <div class="visualization-panel">
+            <div class="vis-header">
+              <div class="vis-title">Execution State</div>
+              <div class="playback-controls" id="playback-controls" style="display: none;">
+                <button id="btn-prev" class="icon-btn" title="Previous Step (←)">◀</button>
+                <span id="step-counter">Step 0 / 0</span>
+                <button id="btn-next" class="icon-btn" title="Next Step (→)">▶</button>
+              </div>
+            </div>
+            <div class="vis-body" id="vis-body">
+              <div class="empty-state">Enter a script on the left to begin.</div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    
+  </body>
+</html>
