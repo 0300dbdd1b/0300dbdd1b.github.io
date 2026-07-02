@@ -8,13 +8,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="./assets/index-CvGGj6Zx.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BW5571tA.css">
+    <script type="module" crossorigin src="./assets/index-CIPigCeQ.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-CHBtw1n9.css">
   </head>
   <body>
     <div id="app">
       <header class="app-header">
-        <a href="/" class="brand-link">btc<span>debugger</span></a>
+        <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+          <a href="/" style="color: var(--text-muted); text-decoration: none; font-size: 14px; display: flex; align-items: center; gap: 4px;">← Home</a>
+          <span class="app-title" onclick="location.reload()" title="Reset to defaults">btc<span>debugger</span></span>
+        </div>
       </header>
       <div class="glass-container">
         <main class="layout">
@@ -47,6 +50,19 @@
               <label for="stack-input">Initial Stack <span class="label-hint">(bottom → top, space-separated)</span></label>
               <input type="text" id="stack-input" class="stack-input" placeholder="e.g. deadbeef 0102" spellcheck="false" />
             </div>
+
+            <details class="advanced-settings">
+              <summary>Advanced: Timelocks & Signatures</summary>
+              <div class="input-group" style="margin-top: 0.5rem;">
+                <label for="tx-input">Transaction Hex <span class="label-hint">(for Locktimes & Sighash)</span></label>
+                <input type="text" id="tx-input" class="stack-input" placeholder="Raw tx hex... (leave empty for default)" spellcheck="false" />
+              </div>
+
+              <div class="input-group" style="margin-top: 1rem;">
+                <label for="pretend-input">Pretend Valid Signatures <span class="label-hint">(sig:pubkey,...)</span></label>
+                <input type="text" id="pretend-input" class="stack-input" placeholder="e.g. 304402...:02334... (skip actual ECDSA check)" spellcheck="false" />
+              </div>
+            </details>
           </div>
 
           <div class="visualization-panel">
