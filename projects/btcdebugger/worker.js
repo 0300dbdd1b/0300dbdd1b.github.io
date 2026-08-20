@@ -19,6 +19,7 @@ importScripts('./btcdeb.js');
 self.onmessage = function(e) {
   if (e.data.type === 'run') {
     let args = e.data.args;
+    let maxSteps = Number.isFinite(e.data.maxSteps) ? e.data.maxSteps : 700;
     let n = 0;
     let r = 0;
     
@@ -26,7 +27,7 @@ self.onmessage = function(e) {
     globalThis.window = {
       prompt: function() {
         r++;
-        if (r > 700) throw new Error("Execution Complete");
+        if (r > maxSteps) throw new Error("Execution Complete");
         let cmd = ['altstack', 'print', 'step'][n];
         n = (n + 1) % 3;
         return cmd;
