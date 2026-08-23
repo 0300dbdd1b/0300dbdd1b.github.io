@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LesLie / 0300dbdd1b — Bitcoin tools, Jai tools, parsers, and notes.">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
     <title>LesLie</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -11,81 +13,100 @@
         <header>
             <h1>⚔ LesLie</h1>
             <p class="nym">0300dbdd1b</p>
+            <p class="subline">tools I build while learning how things work</p>
         </header>
 
         <section>
+            <p class="label">whoami :</p>
             <p>
-                I love programming, algorithms and Bitcoin.
+                I write tools around Bitcoin, Jai, C, and parsers because I learn better
+                when I can test ideas directly.
             </p>
 
             <p>
-                I write code to understand things, solve my own problems,
-                explore ideas, and build tools that match my needs and beliefs.
+                Most of these projects started with a simple frustration: I wanted to
+                understand how a script, file format, compiler, or protocol component
+                worked by building something around it.
             </p>
 
             <p>
-                I care about privacy, personal sovereignty, open systems,
-                and code as a way to live by your own rules.
-            </p>
-        </section>
-
-        <section>
-            <p class="quote">&gt; currently building, learning, breaking, rewriting.</p>
-        </section>
-
-        <section>
-            <p class="label">into :</p>
-            <p>
-                programming, algorithms, Bitcoin, cryptography, unix-like systems,
-                networks, parsers, genetic algorithms, cellular automata,
-                artificial life, weird software, books, music, philosophy, privacy.
+                Some of the tools are practical, some are mostly learning exercises.
+                I keep both around because they show what I was trying to understand at the time.
             </p>
         </section>
 
         <section>
-            <p class="label">against :</p>
+            <p class="quote">&gt; building, breaking, rewriting; mostly around Bitcoin Script, Miniscript, Jai, C, and parsing.</p>
+        </section>
+
+        <section>
+            <p class="label">what i work on :</p>
             <p>
-                surveillance, advertising, bloated software, fake decentralization,
-                subscription culture, dark patterns, locked-down devices, useless meetings.
+                Bitcoin Script and Miniscript, blockchain data formats, small C and Jai
+                tools, compiler/analyzer interfaces, and experiments that help me learn
+                how things work internally.
             </p>
         </section>
 
         <section>
+            <p class="label">how i build :</p>
+            <p>
+                I like tools that are small enough to understand, local when they can be,
+                and honest about what they are doing. I do not mind complexity, but I want
+                to be able to inspect it instead of only trusting the interface.
+            </p>
+        </section>
+
+        <section id="projects">
             <p class="label">projects :</p>
             <ul class="projects">
                 <li>
                     <a href="./projects/basm-studio/">BASM Studio</a>
-                    <p>Web-based Bitcoin Assembly IDE for Taproot MAST and raw script.</p>
+                    <p><span>what:</span> web interface for BASM, my Bitcoin Assembly compiler/analyzer written in Jai.</p>
+                    <p><span>why:</span> I wanted a practical UI to write BASM programs, test the compiler, inspect the generated script, and iterate faster.</p>
                 </li>
                 <li>
                     <a href="./projects/btcdebugger/">btcdebugger</a>
-                    <p>Web-based UI for Bitcoin Core's script debugger.</p>
+                    <p><span>what:</span> browser frontend for btcdeb.</p>
+                    <p><span>why:</span> I wanted to use btcdeb through a web UI and make script execution easier to inspect while stepping.</p>
                 </li>
                 <li>
                     <a href="./projects/miniscript-lab/">Miniscript Lab</a>
-                    <p>Browser-based Miniscript workbench — compile policies, analyze scripts, manage keys, explore spending paths.</p>
+                    <p><span>what:</span> Sipa's Miniscript JS bindings in a browser frontend.</p>
+                    <p><span>why:</span> I wanted to use Miniscript in a frontend and learn how policies become Miniscript, scripts, and possible spending paths.</p>
                 </li>
                 <li>
-                    <a href="./projects/coreparse/">coreparse</a>
-                    <p>C API for reading/parsing a Bitcoin Core datadir.</p>
+                    <a href="https://github.com/0300dbdd1b/coreparse">coreparse</a>
+                    <p><span>what:</span> C API for reading and parsing a Bitcoin Core datadir.</p>
+                    <p><span>why:</span> I wanted to inspect node data directly instead of treating Bitcoin Core's files as a black box.</p>
                 </li>
                 <li>
-                    <a href="./projects/CTB/">CTB</a>
-                    <p>A stb-style header only C toolbox.</p>
+                    <a href="https://github.com/0300dbdd1b/CTB">CTB</a>
+                    <p><span>what:</span> stb-style header-only C toolbox.</p>
+                    <p><span>why:</span> small reusable C utilities, kept simple enough to understand, copy, and drop into experiments.</p>
                 </li>
                 <li>
-                    <a href="#">BIP39 Mnemonic Generator</a>
-                    <p>Python script to learn mnemonic seed generation.</p>
+                    <a href="https://github.com/0300dbdd1b/BIP_39-Mnemonic_Generator">BIP39 Mnemonic Generator</a>
+                    <p><span>what:</span> Python script for generating mnemonic seeds.</p>
+                    <p><span>why:</span> a learning exercise to understand mnemonic generation instead of treating seed words as magic output from a wallet.</p>
                 </li>
 
             </ul>
         </section>
 
         <section>
-            <p class="label">take a look at</p>
+            <p class="label">motivation :</p>
+            <p>
+                The main point is learning how things work. Building a tool forces me to
+                deal with the edge cases, data formats, assumptions, and failure modes.
+            </p>
+        </section>
+
+        <section>
+            <p class="label">links :</p>
             <ul class="links">
                 <li>
-                    <a href="projects/">projects &gt;</a>
+                    <a href="projects/">project index &gt;</a>
                 </li>
 
                 <li>

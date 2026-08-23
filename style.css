@@ -13,13 +13,13 @@ body {
     background:
         radial-gradient(circle at 50% 18%, rgba(124, 58, 237, 0.18), transparent 38%),
         #05030a;
-    font-family: "Courier New", Courier, monospace;
+    font-family: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
     font-size: 16px;
-    line-height: 1.55;
+    line-height: 1.6;
 }
 
 main {
-    width: min(620px, calc(100% - 32px));
+    width: min(720px, calc(100% - 32px));
     margin: 0 auto;
     padding: 64px 0;
 }
@@ -40,6 +40,12 @@ h1 {
 .nym {
     margin-top: 2px;
     color: #a78bfa;
+}
+
+.subline {
+    margin-top: 6px;
+    color: #8b7ab8;
+    font-size: 0.95rem;
 }
 
 section {
@@ -88,13 +94,20 @@ a:hover {
 }
 
 .projects li {
-    margin: 0 0 14px;
+    margin: 0 0 20px;
+    padding-left: 1ch;
+    border-left: 1px dotted rgba(192, 132, 252, 0.35);
 }
 
 .projects p {
-    margin: 3px 0 0 2ch;
+    margin: 4px 0 0 1ch;
     color: #c4b5fd;
     font-size: 0.95rem;
+    line-height: 1.45;
+}
+
+.projects p span {
+    color: #c084fc;
 }
 
 .links {
@@ -168,7 +181,7 @@ footer {
     }
 
     body {
-        font-size: 14px;
+        font-size: 15px;
     }
 
     h1 {
@@ -176,6 +189,6 @@ footer {
     }
 
     .projects p {
-        margin-left: 1ch;
+        margin-left: 0;
     }
 }
