@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Bitcoin Timeline">
+  <defs>
+    <linearGradient id="bg" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#161b22"/>
+      <stop offset="1" stop-color="#090c12"/>
+    </linearGradient>
+    <linearGradient id="rail" x1="6" y1="32" x2="58" y2="32" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff4cf"/>
+      <stop offset="0.42" stop-color="#f7931a"/>
+      <stop offset="1" stop-color="#58a6ff"/>
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="1.8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#bg)"/>
+  <g filter="url(#glow)">
+    <path d="M10 32h44" fill="none" stroke="url(#rail)" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="13" cy="32" r="8" fill="url(#rail)"/>
+    <circle cx="27" cy="32" r="8" fill="url(#rail)"/>
+    <circle cx="41" cy="32" r="8" fill="url(#rail)"/>
+    <circle cx="51" cy="32" r="8" fill="#58a6ff"/>
+    <rect x="48" y="24" width="11" height="16" rx="2" fill="#58a6ff"/>
+  </g>
+  <path d="M13 32h38" fill="none" stroke="#0d1117" stroke-width="1" stroke-linecap="round" opacity="0.32"/>
+</svg>
