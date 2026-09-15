@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Browser explorer for elementary Wolfram cellular automata compiled from C to WebAssembly.">
+  <title>Wolfram Cellular Automata</title>
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+    <nav class="site-nav" aria-label="Project navigation">
+      <a href="../../">home</a>
+      <a href="../">projects</a>
+    </nav>
+
+    <section class="hero">
+      <p class="eyebrow">Elementary cellular automata</p>
+      <h1>Wolfram rule explorer</h1>
+      <p class="intro">Set a rule, edit the seed row, and inspect the pattern.</p>
+    </section>
+
+    <section class="panel" aria-label="Automaton controls">
+      <div class="control wide">
+        <label for="rule">Rule <output id="ruleValue">30</output></label>
+        <input id="rule" type="range" min="0" max="255" value="30">
+      </div>
+
+      <div class="control">
+        <label for="ruleNumber">Rule number</label>
+        <input id="ruleNumber" type="number" min="0" max="255" value="30">
+      </div>
+
+      <div class="control">
+        <label for="width">Width</label>
+        <input id="width" type="number" min="3" max="1024" value="241" step="2">
+      </div>
+
+      <div class="control">
+        <label for="rows">Rows</label>
+        <input id="rows" type="number" min="2" max="1024" value="160">
+      </div>
+
+      <div class="rule-editor wide" aria-labelledby="ruleEditorTitle">
+        <div>
+          <h2 id="ruleEditorTitle">Rule behavior</h2>
+          <p>For each 3-cell parent state, choose whether the next cell becomes alive.</p>
+        </div>
+        <div id="ruleBits" class="rule-bits"></div>
+      </div>
+
+      <div class="buttons wide">
+        <button id="center" type="button">Center seed</button>
+        <button id="random" type="button">Random seed</button>
+        <button id="boundary" type="button" aria-pressed="false">Edges: walls</button>
+        <button id="clear" type="button">Clear</button>
+      </div>
+    </section>
+
+    <section class="stage" aria-label="Automaton output">
+      <div class="seed-label">editable seed row</div>
+      <canvas id="seedCanvas" class="seed-canvas" width="964" height="1"></canvas>
+      <canvas id="canvas" width="964" height="640"></canvas>
+      <p class="hint">Click or drag the seed row to edit the initial state. Dark cells are alive.</p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

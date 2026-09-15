@@ -1,0 +1,304 @@
+:root {
+  color-scheme: light;
+  --bg: #f7f7f5;
+  --surface: #ffffff;
+  --text: #171717;
+  --muted: #6f6f68;
+  --border: #d9d9d2;
+  --border-strong: #9d9d94;
+  --active: #ececea;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--text);
+  background: var(--bg);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.shell {
+  width: min(1040px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 32px 0;
+}
+
+.site-nav {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 28px;
+  font-size: 0.9rem;
+}
+
+.site-nav a {
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.site-nav a:hover {
+  color: var(--text);
+  border-bottom-color: var(--text);
+}
+
+.hero {
+  max-width: 640px;
+  margin-bottom: 24px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.intro {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.panel,
+.stage {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+}
+
+.panel {
+  display: grid;
+  grid-template-columns: 2fr repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 16px;
+  padding: 16px;
+}
+
+.control {
+  display: grid;
+  gap: 7px;
+}
+
+.control.wide {
+  grid-column: span 1;
+}
+
+.rule-editor.wide,
+.buttons.wide {
+  grid-column: 1 / -1;
+}
+
+label {
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+output {
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+
+input[type="range"] {
+  width: 100%;
+  accent-color: var(--text);
+}
+
+input[type="number"] {
+  width: 100%;
+  min-height: 38px;
+  padding: 7px 9px;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font: inherit;
+  font-variant-numeric: tabular-nums;
+}
+
+input[type="number"]:focus,
+button:focus-visible,
+canvas:focus-visible {
+  outline: 2px solid var(--text);
+  outline-offset: 2px;
+}
+
+button {
+  min-height: 38px;
+  padding: 0 14px;
+  color: var(--surface);
+  background: var(--text);
+  border: 1px solid var(--text);
+  border-radius: 8px;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #000;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.buttons button:not(:first-child) {
+  color: var(--text);
+  background: var(--surface);
+  border-color: var(--border-strong);
+}
+
+.buttons button:not(:first-child):hover {
+  background: var(--active);
+}
+
+.buttons button[aria-pressed="true"] {
+  color: var(--surface);
+  background: var(--text);
+  border-color: var(--text);
+}
+
+.rule-editor {
+  display: grid;
+  gap: 12px;
+  padding-top: 2px;
+}
+
+.rule-editor h2 {
+  margin: 0 0 4px;
+  font-size: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.rule-editor p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.rule-bits {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(76px, 1fr));
+  gap: 8px;
+}
+
+.rule-bit {
+  display: grid;
+  gap: 7px;
+  justify-items: center;
+  min-height: auto;
+  padding: 10px 8px;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.rule-bit:hover {
+  background: var(--active);
+}
+
+.rule-bit.enabled {
+  background: var(--active);
+  border-color: var(--text);
+}
+
+.parent-state,
+.result-state {
+  display: flex;
+  gap: 3px;
+}
+
+.state-arrow {
+  color: var(--muted);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.mini-cell {
+  width: 15px;
+  height: 15px;
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: 2px;
+}
+
+.mini-cell.alive {
+  background: var(--text);
+  border-color: var(--text);
+}
+
+.stage {
+  padding: 12px;
+}
+
+.seed-label {
+  margin-bottom: 6px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+canvas {
+  display: block;
+  width: 100%;
+  max-height: 76vh;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  image-rendering: pixelated;
+  touch-action: none;
+}
+
+.seed-canvas {
+  height: 32px;
+  margin-bottom: 10px;
+  border-color: var(--text);
+}
+
+.hint {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 760px) {
+  .shell {
+    width: min(100% - 20px, 1040px);
+    padding: 20px 0;
+  }
+
+  .panel {
+    grid-template-columns: 1fr;
+  }
+
+  .rule-bits {
+    grid-template-columns: repeat(4, minmax(68px, 1fr));
+  }
+
+  .buttons button {
+    flex: 1 1 136px;
+  }
+}
